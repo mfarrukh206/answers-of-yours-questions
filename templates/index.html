@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Question-Answer System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Ask Questions to AI</h1>
+        
+        <!-- Input Field for Asking Question -->
+        <div class="form-group">
+            <label for="question">Ask a Question:</label>
+            <input type="text" class="form-control" id="question" placeholder="Enter your question">
+        </div>
+        
+        <!-- Submit Button -->
+        <button id="ask-btn" class="btn btn-primary">Submit</button>
+        
+        <!-- Display AI's Answer -->
+        <div class="mt-4">
+            <h4>Answer:</h4>
+            <div id="answer" class="alert alert-info"></div>
+        </div>
+
+        <!-- History Section -->
+        <div class="mt-5">
+            <h4>History</h4>
+            <ul id="history" class="list-group">
+                {% for entry in history %}
+                <li class="list-group-item">
+                    <strong>Q:</strong> {{ entry.question }} <br>
+                    <strong>A:</strong> {{ entry.answer }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

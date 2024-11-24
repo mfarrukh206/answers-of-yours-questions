@@ -1,0 +1,16 @@
+Flask==2.1.1
+Flask-SQLAlchemy==2.5.1
+Flask-Migrate==3.1.0
+openai==0.8.3
+
+
+
+# openai.api_key = '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'
+
+
+
+#     def __repr__(self):
+#         return f'QnA(question="{self.question}", answer="{self.answer}")'
+    
+# with app.app_context():
+#     db.create_all()
